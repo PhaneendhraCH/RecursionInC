@@ -1,0 +1,26 @@
+#include <stdio.h>
+#define max 100
+
+void firstcapital(char s[]){
+    
+    static int i=0;
+    
+    if (s[i]!='\0'){
+    if(s[i]>=65 && s[i]<=90){
+        printf("First Capital Letter %c found at %d ",s[i],i);
+        return 0;
+      }
+    else{
+        i+=1;
+        firstcapital(s);
+    }
+    }
+}
+
+int main()
+{
+	char str[max];
+	gets(str);
+	firstcapital(str);
+
+}
