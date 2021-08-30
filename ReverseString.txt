@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+#define MAX 100
+
+void reversestring(char s[],int len){
+    static int i=0;
+    len = len-1;
+    char ch;
+    
+    if(i == len)
+    {
+        return 0;
+    }
+    else{
+    ch = s[i];
+    s[i] = s[len];
+    s[len] = ch;
+    i+=1;
+    reversestring(s,len);
+    }
+}
+
+int main(){
+    char str[MAX];
+    gets(str);
+    int size = strlen(str);
+    reversestring(str,size);
+    puts(str);
+}
