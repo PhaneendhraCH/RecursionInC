@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+#define MAX 100
+
+void palindrome(char s[],int len){
+    static int i=0;
+    len = len-1;
+
+    if(s[i]==s[len]){
+        
+        if(i==len){
+        printf("Is a palindrome\n");
+        return;
+        }
+        
+        i+=1;
+        palindrome(s,len);
+    } 
+    else{
+        printf("Not a palindrome\n");
+        return;
+        }
+}
+
+int main(){
+    char str[MAX];
+    scanf("%s",&str);
+    int size = strlen(str);
+    palindrome(str,size);
+    
+}
